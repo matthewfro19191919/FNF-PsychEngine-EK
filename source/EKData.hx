@@ -31,13 +31,13 @@ class EKData {
 		4 => [
                 "letters" => ["A", "B", "E", "C", "D"], 
                 "anims" => ["LEFT", "DOWN", "UP", "UP", "RIGHT"],
-                "strumAnims" => ["LEFT", "DOWN", "SPACE", "UP", "RIGHT0"], 
+                "strumAnims" => ["LEFT0", "DOWN0", "SPACE", "UP0", "RIGHT0"], 
                 "pixelAnimIndex" => [0, 1, 4, 2, 3]
             ],
 		5 => [
                 "letters" => ["A", "C", "D", "F", "B", "I"], 
                 "anims" => ["LEFT", "UP", "RIGHT0", "LEFT", "DOWN", "RIGHT"],
-	        "strumAnims" => ["LEFT", "UP", "RIGHT0", "LEFT", "DOWN", "RIGHT0"], 
+	        "strumAnims" => ["LEFT0", "UP0", "RIGHT0", "LEFT0", "DOWN0", "RIGHT0"], 
                 "pixelAnimIndex" => [0, 2, 3, 5, 1, 8]
             ],
 		6 => [
@@ -55,13 +55,13 @@ class EKData {
 		8 => [
                 "letters" => ["A", "B", "C", "D", "E", "F", "G", "H", "I"], 
                 "anims" => ["LEFT", "DOWN", "UP", "RIGHT0", "UP", "LEFT", "DOWN", "UP", "RIGHT0"],
-	        "strumAnims" => ["LEFT0", "DOWN0", "UP0", "RIGHT0", "SPACE", "LEFT", "DOWN", "UP", "RIGHT0"], 
+	        "strumAnims" => ["LEFT0", "DOWN0", "UP0", "RIGHT0", "SPACE", "LEFT0", "DOWN0", "UP0", "RIGHT0"], 
                 "pixelAnimIndex" => [0, 1, 2, 3, 4, 5, 6, 7, 8]
             ],
 		9 => [
                 "letters" => ["A", "B", "C", "D", "E", "N", "F", "G", "H", "I"], 
                 "anims" => ["LEFT", "DOWN", "UP", "RIGHT0", "UP", "UP", "LEFT", "DOWN", "UP", "RIGHT0"],
-	        "strumAnims" => ["LEFT", "DOWN", "UP", "RIGHT0", "SPACE", "CIRCLE", "LEFT", "DOWN", "UP", "RIGHT0"], 
+	        "strumAnims" => ["LEFT", "DOWN", "UP", "RIGHT0", "SPACE", "CIRCLE", "LEFT0", "DOWN0", "UP0", "RIGHT0"], 
                 "pixelAnimIndex" => [0, 1, 2, 3, 4, 13, 5, 6, 7, 8]
             ],
         10 => [
