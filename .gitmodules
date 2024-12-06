@@ -1,0 +1,3 @@
+[submodule "example.mods"]
+	path = example.mods
+	url = https://github.com/MatthewFro191919/example.mods
