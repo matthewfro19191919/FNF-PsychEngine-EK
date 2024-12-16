@@ -1012,6 +1012,8 @@ class PlayState extends MusicBeatState
 			legs.alpha = 0;			
 			add(legs);
 
+			godMoveSh = true;
+			
 			shaggyT = new FlxTrail(dad, null, 5, 7, 0.3, 0.001);
 			add(shaggyT);
 
