@@ -334,6 +334,9 @@ class PlayState extends MusicBeatState
 	var legT:FlxTrail;
 	
 	var godMoveSh:Bool = false;
+	
+                //ass crack
+	var sh_r:Float = 600;
 
 	override public function create()
 	{
@@ -3226,7 +3229,11 @@ class PlayState extends MusicBeatState
 					}
 				}
 			default:
-				if (godMoveSh)
+				var rotRateSh = curStep / 9.5;
+				var sh_toy = -2450 + -Math.sin(rotRateSh * 2) * sh_r * 0.45;
+				var sh_tox = -330 -Math.cos(rotRateSh) * sh_r;
+		
+       				if (godMoveSh)
 				{
 					dad.x += (sh_tox - dad.x) / 12;
 					dad.y += (sh_toy - dad.y) / 12;
