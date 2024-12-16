@@ -328,6 +328,13 @@ class PlayState extends MusicBeatState
 	// stores the last combo score objects in an array
 	public static var lastScore:Array<FlxSprite> = [];
 
+	//shaggg
+	var legs:FlxSprite;
+	var shaggyT:FlxTrail;
+	var legT:FlxTrail;
+	
+	var godMoveSh:Bool = false;
+
 	override public function create()
 	{
 		//trace('Playback Rate: ' + playbackRate);
@@ -991,6 +998,25 @@ class PlayState extends MusicBeatState
 			dad.setPosition(GF_X, GF_Y);
 			if(gf != null)
 				gf.visible = false;
+		}
+		
+	        if(boyfriend.curCharacter != 'godShaggy') {
+			//god eater legs
+			legs = new FlxSprite(-850, -850);
+			legs.frames = Paths.getSparrowAtlas('characters/shaggy_god');
+			legs.animation.addByPrefix('legs', "solo_legs", 30);
+			legs.animation.play('legs');
+			legs.antialiasing = true;
+			legs.updateHitbox();
+			legs.offset.set(legs.frameWidth / 2, 10);
+			legs.alpha = 0;			
+			add(legs);
+
+			shaggyT = new FlxTrail(dad, null, 5, 7, 0.3, 0.001);
+			add(shaggyT);
+
+			legT = new FlxTrail(legs, null, 5, 7, 0.3, 0.001);
+			add(legT);
 		}
 
 		switch(curStage)
@@ -3196,6 +3222,32 @@ class PlayState extends MusicBeatState
 						bottomBoppers.dance(true);
 						heyTimer = 0;
 					}
+				}
+			default:
+				if (godMoveSh)
+				{
+					dad.x += (sh_tox - dad.x) / 12;
+					dad.y += (sh_toy - dad.y) / 12;
+
+					if (boyfriend.animation.name == 'idle')
+					{
+						var pene = 0.07;
+						dad.angle = Math.sin(rotRateSh) * sh_r * pene / 4;
+
+						legs.alpha = 1;
+						legs.angle = Math.sin(rotRateSh) * sh_r * pene;// + Math.cos(curStep) * 5;
+
+						legs.x = dad.x + 120 + Math.cos((legs.angle + 90) * (Math.PI/180)) * 150;
+						legs.y = dad.y + 300 + Math.sin((legs.angle + 90) * (Math.PI/180)) * 150;
+					}
+					else
+					{
+						boyfriend.angle = 0;
+						legs.alpha = 0;
+					}
+					legT.visible = true;
+					if (legs.alpha == 0)
+			         		legT.visible = false;
 				}
 		}
 
