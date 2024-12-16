@@ -63,7 +63,7 @@ jobs:
       - name: Install Haxelib
         run: |
           haxelib setup C:/haxelib
-          haxelib install hxcpp > /dev/null --quiet
+          haxelib install hxcpp > nul
           .\"setup/windows.bat"
         shell: cmd
       - name: Skip SScript setup mode
